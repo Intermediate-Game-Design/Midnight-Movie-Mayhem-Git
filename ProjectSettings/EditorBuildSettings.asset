@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Indoors_Cafe.unity
+    guid: 3ea9d9c38f54ef545b05068af7e6f0c1
+  - enabled: 1
+    path: Assets/Scenes/Outdoors_Main.unity
+    guid: d85b1317e48e53f42b921aaa191dc577
+  - enabled: 1
+    path: Assets/Scenes/Bathroom.unity
+    guid: 07f8e7123e7a526428f305d0638b437a
+  - enabled: 1
+    path: Assets/Scenes/ExitGate.unity
+    guid: d081b2e73ede53346861b608f6601bb6
+  - enabled: 1
+    path: Assets/Scenes/Office.unity
+    guid: a2931d250ad32f447956ca512115b41c
+  - enabled: 1
+    path: Assets/Scenes/Shed.unity
+    guid: 4d43ce4aded9fff4a84775ff01a691ff
+  - enabled: 1
+    path: Assets/Scenes/Storage.unity
+    guid: 0c9da616f32da0c42896c8ce8ec4dc60
+  - enabled: 1
+    path: Assets/Scenes/Upstairs.unity
+    guid: e1000f06bde39b245afa36310a35879a
+  m_configObjects: {}
