@@ -18,7 +18,7 @@ public class SwitchingCameras : MonoBehaviour
         cameras = camMaster.GetComponent<CameraArray>().cameras;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {

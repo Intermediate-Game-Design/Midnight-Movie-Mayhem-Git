@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Sprinter : MonoBehaviour
 {
-    float stamina = 5, maxStamina = 5;
+    public float stamina = 5, maxStamina = 5;
     float walkSpeed, runSpeed;
     TankControls cm;
-    bool isRunning;
+    bool isRunning, hideSprint = true;
 
     Rect staminaRect;
     Texture2D staminaTexture;
@@ -16,10 +16,10 @@ public class Sprinter : MonoBehaviour
     void Start()
     {
         cm = gameObject.GetComponent<TankControls>();
-        staminaRect = new Rect(Screen.width / 10, Screen.height * 9 /10, 
-            Screen.width / 3, Screen.height / 50);
+        staminaRect = new Rect(20, 20,
+                50, 20);
         staminaTexture = new Texture2D(1, 1);
-        staminaTexture.SetPixel(0, 0, Color.white);
+        staminaTexture.SetPixel(0, 0, Color.green);
         staminaTexture.Apply();
     }
 
@@ -34,35 +34,52 @@ public class Sprinter : MonoBehaviour
     {
         SetRunning(cm.isRunning);
 
-
-        if (isRunning)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
+            hideSprint = false;
+        }
             
-            stamina -= Time.deltaTime;
-            if (stamina < 0)
-            {
-                stamina = 0;
-                
-                cm.isRunning = false;
-                
-                SetRunning(false);
-                StartCoroutine(Exhaustion());
-                
-            }
 
-        }
-        else if (stamina < maxStamina)
+        if (stamina > maxStamina)
         {
-            stamina += Time.deltaTime;
+            StartCoroutine(HideSprint());
+            stamina = maxStamina;
         }
+
+                if (isRunning && stamina > 0)
+                {
+                    stamina -= Time.deltaTime;
+                }
+                if (stamina < 0)
+                {
+                    stamina = 0;
+
+                    cm.isRunning = false;
+
+                    SetRunning(false);
+                    StartCoroutine(Exhaustion());
+
+                }
+
+                else if (stamina < maxStamina && !isRunning)
+                {
+                    stamina += Time.deltaTime;
+                }
+            
     }
 
     void OnGUI()
     {
         float ratio = stamina / maxStamina;
-        float rectWidth = ratio*Screen.width / 3;
+        float rectWidth = ratio*250;
         staminaRect.width = rectWidth;
-        GUI.DrawTexture(staminaRect, staminaTexture);
+        if (stamina < maxStamina)
+        {
+            GUI.DrawTexture(staminaRect, staminaTexture);
+        }
+        else if (!hideSprint && isRunning){
+            GUI.DrawTexture(staminaRect, staminaTexture);
+        }
     }
     IEnumerator Exhaustion()
     {
@@ -71,5 +88,10 @@ public class Sprinter : MonoBehaviour
         yield return new WaitForSeconds(5);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         cm.canSprint = true;
+    }
+    IEnumerator HideSprint()
+    {
+        yield return new WaitForSeconds(.5f);
+        hideSprint = true;
     }
 }
