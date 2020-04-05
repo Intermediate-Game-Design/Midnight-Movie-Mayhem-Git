@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Bathroom.unity
     guid: 07f8e7123e7a526428f305d0638b437a
   - enabled: 1
-    path: Assets/Scenes/ExitGate.unity
+    path: Assets/Scenes/Exit_Gate.unity
     guid: d081b2e73ede53346861b608f6601bb6
   - enabled: 1
     path: Assets/Scenes/Office.unity

@@ -21,13 +21,16 @@ public class TankControls : MonoBehaviour
     {
         if (inputEnabled)
         {
-            if (Input.GetKey(KeyCode.LeftShift) && canSprint)
+            if (canSprint)
             {
-                isRunning = true;
-            }
-            else
-            {
-                isRunning = false;
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetButton("Vertical"))
+                {
+                    isRunning = true;
+                }
+                else
+                {
+                    isRunning = false;
+                }
             }
 
             if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
@@ -68,8 +71,8 @@ public class TankControls : MonoBehaviour
             {
                 isMoving = false;
                 thePlayer.GetComponent<Animator>().Play("Idle"); //idle animation
-                //horizontalMove = 0;
-                //verticalMove = 0;
+                horizontalMove = 0;
+                verticalMove = 0;
             }
         }
         else
