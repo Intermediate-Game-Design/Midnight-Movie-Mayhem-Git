@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &570167056577642492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570167056577642495}
+  - component: {fileID: 570167056577642489}
+  - component: {fileID: 570167056577642494}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &570167056577642495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570167056577642492}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.16000272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &570167056577642489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570167056577642492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f38ef56ecb5564e8b5237fac977d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 570167056577642492}
+  equipItem: {fileID: 0}
+--- !u!114 &570167056577642494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570167056577642492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d52c053b30f3c5409a46a614efc1d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItems: []
+  inventorySlice: 90
+  manager: {fileID: 570167056577642492}
+  crankHandle: {fileID: 2304856593872445702, guid: 9b1f877f882b79a42ad58d43199945e2,
+    type: 3}
+  poolBall: {fileID: 8870184882299929072, guid: 770431997f0327147a89887cd3c28566,
+    type: 3}
+  crowbar: {fileID: 0}
+  saw: {fileID: 1565781480312301507, guid: 5527c4c934d7bf744946bb61217455be, type: 3}
+  revolver: {fileID: 8920152686322882851, guid: 45cacea59681a5a4688bb8a6f315b496,
+    type: 3}
+  VHS: {fileID: 0}
+  ticketBoothKey: {fileID: 0}
+  ExitGateKey: {fileID: 0}
+  temp_size: 0
+  change: 0

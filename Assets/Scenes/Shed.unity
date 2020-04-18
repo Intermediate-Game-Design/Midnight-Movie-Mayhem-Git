@@ -107,9 +107,9 @@ NavMeshSettings:
     serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentHeight: 0.5
+    agentSlope: 0
+    agentClimb: 0
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f81ee1a05b7c00f499437fc1182910b7, type: 2}
 --- !u!1 &35708897
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +136,8 @@ GameObject:
   m_Name: Plaque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &35708898
 Transform:
@@ -215,8 +215,8 @@ GameObject:
   m_Name: Pot de Fleur 006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &64447388
 Transform:
@@ -377,8 +377,8 @@ GameObject:
   m_Name: SerreJoints001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &99289792
 Transform:
@@ -457,8 +457,8 @@ GameObject:
   m_Name: Tretaux
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &111377764
 Transform:
@@ -550,8 +550,8 @@ GameObject:
   m_Name: Old Lavabo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &129930277
 Transform:
@@ -629,8 +629,8 @@ GameObject:
   m_Name: SerreJoints004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &141509142
 Transform:
@@ -801,8 +801,8 @@ GameObject:
   m_Name: Ciseaux
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &164395520
 Transform:
@@ -1134,8 +1134,8 @@ GameObject:
   m_Name: SerreJoints003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &284831351
 Transform:
@@ -1306,8 +1306,8 @@ GameObject:
   m_Name: Pots de fleurs Casses003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &319717306
 Transform:
@@ -1385,8 +1385,8 @@ GameObject:
   m_Name: Manivelle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &382197489
 Transform:
@@ -1464,8 +1464,8 @@ GameObject:
   m_Name: Decapsuleur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &391522332
 Transform:
@@ -1638,85 +1638,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434584666}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &439816652
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 439816653}
-  - component: {fileID: 439816655}
-  - component: {fileID: 439816654}
-  m_Layer: 0
-  m_Name: ScieAMetaux
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &439816653
+--- !u!4 &439816653 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8073606001440901244}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439816652}
-  m_LocalRotation: {x: -0.6841187, y: -0.66544616, z: -0.21488282, w: -0.20733675}
-  m_LocalPosition: {x: 5.72, y: -1.107, z: -10.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1292849443}
-  m_RootOrder: 44
-  m_LocalEulerAnglesHint: {x: -0.132, y: -214.747, z: 91.62701}
---- !u!23 &439816654
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439816652}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b9343b2d8a7eac848a358309bb09a5bd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &439816655
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439816652}
-  m_Mesh: {fileID: 4300138, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}
 --- !u!1 &452378552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,8 +1769,8 @@ GameObject:
   m_Name: SerreJoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &453334598
 Transform:
@@ -1921,8 +1848,8 @@ GameObject:
   m_Name: Boite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &458292876
 Transform:
@@ -2001,8 +1928,8 @@ GameObject:
   m_Name: Bidon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &464358987
 Transform:
@@ -2094,8 +2021,8 @@ GameObject:
   m_Name: Chaise cASSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &495201901
 Transform:
@@ -2173,8 +2100,8 @@ GameObject:
   m_Name: PetitTruc02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &539949033
 Transform:
@@ -2252,8 +2179,8 @@ GameObject:
   m_Name: SerreJoints002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &550286859
 Transform:
@@ -2400,50 +2327,81 @@ PrefabInstance:
     - {fileID: 11400002, guid: de63ee434fe39914b8d2f5680c62d05f, type: 3}
     - {fileID: 9500000, guid: de63ee434fe39914b8d2f5680c62d05f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: de63ee434fe39914b8d2f5680c62d05f, type: 3}
---- !u!1 &563371653
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 563371655}
-  - component: {fileID: 563371654}
-  m_Layer: 0
-  m_Name: PlayerSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &563371654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563371653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6860df9d036304d468199671e6ca5292, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1858632257}
---- !u!4 &563371655
+--- !u!4 &553161153 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 400096, guid: de63ee434fe39914b8d2f5680c62d05f,
+    type: 3}
+  m_PrefabInstance: {fileID: 553161152}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563371653}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.434381, y: 2.6487603, z: 24.99479}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &583779751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 553161153}
+    m_Modifications:
+    - target: {fileID: 654441787032895012, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_Name
+      value: GameMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -76.49467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.179007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 100.771255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316709308585478355, guid: e26723896a89666478fdb5b39d8fa4ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e26723896a89666478fdb5b39d8fa4ba, type: 3}
 --- !u!1 &605442344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &610529584
 GameObject:
@@ -2696,8 +2654,8 @@ GameObject:
   m_Name: Caisse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &643455905
 Transform:
@@ -2788,8 +2746,8 @@ GameObject:
   m_Name: PetitTruc01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &654178257
 Transform:
@@ -2867,8 +2825,8 @@ GameObject:
   m_Name: Chaise003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &672856223
 Transform:
@@ -2946,8 +2904,8 @@ GameObject:
   m_Name: Pince02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &676219853
 Transform:
@@ -3025,8 +2983,8 @@ GameObject:
   m_Name: AeroMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &700751037
 Transform:
@@ -3197,8 +3155,8 @@ GameObject:
   m_Name: PetitTruc03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &727223260
 Transform:
@@ -3554,8 +3512,8 @@ GameObject:
   m_Name: Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &767834683
 Transform:
@@ -3633,8 +3591,8 @@ GameObject:
   m_Name: Lierre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &773944074
 Transform:
@@ -3713,8 +3671,8 @@ GameObject:
   m_Name: Pots de fleurs Casses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &791751136
 Transform:
@@ -3792,8 +3750,8 @@ GameObject:
   m_Name: SerreJoints005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &829483670
 Transform:
@@ -3871,8 +3829,8 @@ GameObject:
   m_Name: Pic a Glace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &843117396
 Transform:
@@ -3950,8 +3908,8 @@ GameObject:
   m_Name: OldShed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &896663146
 Transform:
@@ -4127,8 +4085,8 @@ GameObject:
   m_Name: Hachoir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &941705844
 Transform:
@@ -4299,8 +4257,8 @@ GameObject:
   m_Name: Tournevis Plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &967996961
 Transform:
@@ -4378,8 +4336,8 @@ GameObject:
   m_Name: Chaine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &996325451
 Transform:
@@ -4457,8 +4415,8 @@ GameObject:
   m_Name: Tournevis Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1061820192
 Transform:
@@ -4584,6 +4542,14 @@ MonoBehaviour:
   - {fileID: 5910233811120474901, guid: 98057d5091a504c4eb60c38694005b55, type: 3}
   inventorySlice: 90
   manager: {fileID: 1064410805}
+  crankHandle: {fileID: 0}
+  poolBall: {fileID: 0}
+  crowbar: {fileID: 0}
+  saw: {fileID: 0}
+  revolver: {fileID: 0}
+  VHS: {fileID: 0}
+  ticketBoothKey: {fileID: 0}
+  ExitGateKey: {fileID: 0}
 --- !u!1 &1070102536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,8 +4565,8 @@ GameObject:
   m_Name: Pot de Fleur 003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1070102537
 Transform:
@@ -4864,8 +4830,8 @@ GameObject:
   m_Name: Pot de Fleur 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1149203767
 Transform:
@@ -4928,6 +4894,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149203766}
   m_Mesh: {fileID: 4300038, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}
+--- !u!1 &1185194400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185194404}
+  - component: {fileID: 1185194403}
+  - component: {fileID: 1185194402}
+  - component: {fileID: 1185194401}
+  m_Layer: 0
+  m_Name: InvisibleGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!65 &1185194401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185194400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1185194402
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185194400}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1185194403
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185194400}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1185194404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185194400}
+  m_LocalRotation: {x: -0, y: 0.10554521, z: -0, w: 0.9944145}
+  m_LocalPosition: {x: 102.49, y: -0.29, z: -41.58}
+  m_LocalScale: {x: 24.463, y: 1, z: 158.65408}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 12.117001, z: 0}
 --- !u!1 &1248103659
 GameObject:
   m_ObjectHideFlags: 0
@@ -4943,8 +5002,8 @@ GameObject:
   m_Name: Chain 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1248103660
 Transform:
@@ -5022,8 +5081,8 @@ GameObject:
   m_Name: Petite Echelle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1265576239
 Transform:
@@ -5204,8 +5263,8 @@ GameObject:
   m_Name: Chaise002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1348311905
 Transform:
@@ -5268,6 +5327,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348311904}
   m_Mesh: {fileID: 4300060, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}
+--- !u!1001 &1348481119
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 550678035785248601, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.434381
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.6487603
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.99479
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550678035785248615, guid: d922dc947851df2489be66c10b4221dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d922dc947851df2489be66c10b4221dc, type: 3}
 --- !u!1 &1349514872
 GameObject:
   m_ObjectHideFlags: 0
@@ -5283,8 +5411,8 @@ GameObject:
   m_Name: Tableau a Outils
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1349514873
 Transform:
@@ -5363,8 +5491,8 @@ GameObject:
   m_Name: Etagere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1403068032
 Transform:
@@ -5455,8 +5583,8 @@ GameObject:
   m_Name: Pots de fleurs Casses001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1407559114
 Transform:
@@ -5534,8 +5662,8 @@ GameObject:
   m_Name: Pots de fleurs Casses002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1410324818
 Transform:
@@ -5613,8 +5741,8 @@ GameObject:
   m_Name: Pot de Fleur 004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1412377752
 Transform:
@@ -5692,8 +5820,8 @@ GameObject:
   m_Name: LongPieux
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1432906371
 Transform:
@@ -5771,8 +5899,8 @@ GameObject:
   m_Name: Pot de fleur 006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1439398901
 Transform:
@@ -5850,8 +5978,8 @@ GameObject:
   m_Name: Clede16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1449946829
 Transform:
@@ -5929,8 +6057,8 @@ GameObject:
   m_Name: Decal_Debris01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1449976845
 Transform:
@@ -6008,8 +6136,8 @@ GameObject:
   m_Name: ToolBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1469494144
 Transform:
@@ -6128,8 +6256,8 @@ GameObject:
   m_Name: Pompe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1597022497
 Transform:
@@ -6207,8 +6335,8 @@ GameObject:
   m_Name: CutMachine001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1631267344
 Transform:
@@ -6286,8 +6414,8 @@ GameObject:
   m_Name: Tournevis Cruciforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1664831581
 Transform:
@@ -6478,7 +6606,7 @@ Transform:
   - {fileID: 1064410806}
   - {fileID: 727665522}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1730794461
 GameObject:
@@ -6495,8 +6623,8 @@ GameObject:
   m_Name: Pot de fleur 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1730794462
 Transform:
@@ -6574,8 +6702,8 @@ GameObject:
   m_Name: Tuyaux
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1833728269
 Transform:
@@ -6653,8 +6781,8 @@ GameObject:
   m_Name: Pince01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1848277023
 Transform:
@@ -6732,8 +6860,8 @@ GameObject:
   m_Name: Petite Echelle001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1858483357
 Transform:
@@ -6992,8 +7120,8 @@ GameObject:
   m_Name: Ampoule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1908199978
 Transform:
@@ -7137,7 +7265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 22.694, y: -93.024, z: -4.9550004}
 --- !u!1 &2005767006
 GameObject:
@@ -7154,8 +7282,8 @@ GameObject:
   m_Name: CutMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2005767007
 Transform:
@@ -7233,8 +7361,8 @@ GameObject:
   m_Name: WoodClamper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2047326987
 Transform:
@@ -7297,3 +7425,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047326986}
   m_Mesh: {fileID: 4300010, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}
+--- !u!1001 &8073606001440901244
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1292849443}
+    m_Modifications:
+    - target: {fileID: 8073606001610185136, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_Name
+      value: Saw
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6841187
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.66544616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.21488282
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.20733675
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.132
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -214.747
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073606001610185137, guid: 54d3562b56864324facc10cb85e2542a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 91.62701
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54d3562b56864324facc10cb85e2542a, type: 3}

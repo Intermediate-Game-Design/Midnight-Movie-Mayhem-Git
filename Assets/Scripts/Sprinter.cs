@@ -48,7 +48,7 @@ public class Sprinter : MonoBehaviour
 
                 if (isRunning && stamina > 0)
                 {
-                    stamina -= Time.deltaTime;
+                    stamina -= Time.deltaTime/2;
                 }
                 if (stamina < 0)
                 {
@@ -83,10 +83,10 @@ public class Sprinter : MonoBehaviour
     }
     IEnumerator Exhaustion()
     {
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
         cm.canSprint = false;
         yield return new WaitForSeconds(5);
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         cm.canSprint = true;
     }
     IEnumerator HideSprint()

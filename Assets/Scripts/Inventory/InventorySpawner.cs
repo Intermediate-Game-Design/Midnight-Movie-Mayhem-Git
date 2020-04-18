@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class InventorySpawner : MonoBehaviour
 {
-    //public arraya of inventory items.
+    //public array of inventory items.
     public List<GameObject> inventoryItems = new List<GameObject>();
+
     public int inventorySlice = 90;
     public GameObject manager;
     //public List<GameObject> currentInventory = new List<GameObject>();
@@ -14,53 +15,190 @@ public class InventorySpawner : MonoBehaviour
 
     private GameObject item;
 
-    
+    //ALL POSSIBLE ITEMS MUST BE PLACED HERE BEFORE GAME IS RUN
+    public GameObject crankHandle;
+    public GameObject poolBall;
+    public GameObject crowbar;
+    public GameObject saw;
+    public GameObject revolver;
+    public GameObject VHS;
+    public GameObject ticketBoothKey;
+    public GameObject ExitGateKey;
+
+    public int temp_size;
+    public bool change = false; //defines if inventory should change
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //find amount of items in array
-        //get desired angle by 360/array length
-
-        inventorySlice = 360 / inventoryItems.Count;
-
-        //transform with center of inventory circle
-        Vector3 center = transform.position;
-
-        float space = 1;
-
-        //loop that places each item in the inventory
-        foreach (GameObject slot in inventoryItems)
-        {
-            //start at 0.
-            //spawn item with offset
-            Vector3 pos = CirCircle(center, 3.0f, space);
-            //update variable for determining the angle of hte next item
-            //update angle for next item
-            space += 1;
-            //random rotation doesn't matter.
-            Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - pos);
-            //save ref to item
-            
-            item = Instantiate(slot, pos, rot);
-            item.transform.SetParent(manager.transform);
-            //currentInventory.Add(item);
-            //add item to list for ref.
-
-
-        }
+        //UpdateList();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       
+        GameObject.FindWithTag("Pool Ball").transform.rotation = Quaternion.Euler(180, 0, 0);
+    }
+    public void CheckSave()
+    {
+        //int size = inventoryItems.Count;
 
+        InventoryState.IniReadValue("Items", "slot1");
+        InventoryState.IniReadValue("Items", "slot2");
+        InventoryState.IniReadValue("Items", "slot3");
+        InventoryState.IniReadValue("Items", "slot4");
+        InventoryState.IniReadValue("Items", "slot5");
+        InventoryState.IniReadValue("Items", "slot6");
+        InventoryState.IniReadValue("Items", "slot7");
+        InventoryState.IniReadValue("Items", "slot8");
+    
+        string sw = GameState.IniReadValue("Items", "Saw");    
+        string pool_ball = GameState.IniReadValue("Items", "Pool Ball");
+        string handle = GameState.IniReadValue("Items", "Crank Handle");
+        string gun = GameState.IniReadValue("Items", "Revolver");
 
+        if (pool_ball == "true")
+        {
+            if (inventoryItems.Count == 0)
+            {
+                inventoryItems.Add(poolBall);
+            }
+            else
+            {
+
+                //Debug.Log("pool ball is true");
+                for (int i = 0; i < inventoryItems.Count; i++)
+                {
+                    if (inventoryItems[i].name == "Pool Ball")
+                    {
+                        Debug.Log("pool ball already exists");
+                        break;
+                    }
+                    else if (i == inventoryItems.Count-1 && inventoryItems[i].name != "Pool Ball")
+                    {
+                        inventoryItems.Add(poolBall); //find the object marked "poolBall"  
+                        change = true;
+                    }
+                }
+            }
+        }
+        if (sw == "true")
+        {
+                //Debug.Log("pool ball is true");
+                for (int i = 0; i < inventoryItems.Count; i++)
+                {
+                    if (inventoryItems[i].name == "Saw")
+                    {
+                        Debug.Log("saw already exists");
+                        break;
+                    }
+                    else if (i == inventoryItems.Count-1 && inventoryItems[i].name != "Saw")
+                    {
+                        inventoryItems.Add(saw); //find the object marked "poolBall"
+                        Debug.Log("saw added");
+                        change = true;
+                    }
+
+                }
+        }
+        if (handle == "true")
+        {
+            //Debug.Log("pool ball is true");
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].name == "CrankHandle")
+                {
+                    Debug.Log("handle already exists");
+                    break;
+                }
+                else if (i == inventoryItems.Count - 1 && inventoryItems[i].name != "CrankHandle")
+                {
+                    inventoryItems.Add(crankHandle); //find the object marked "poolBall"
+                    Debug.Log("handle added");
+                    change = true;
+                }
+
+            }
+        }
+        if (gun == "true")
+        {
+            //Debug.Log("pool ball is true");
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].name == "Revolver")
+                {
+                    Debug.Log("revolver already exists");
+                    break;
+                }
+                else if (i == inventoryItems.Count - 1 && inventoryItems[i].name != "Revolver")
+                {
+                    inventoryItems.Add(revolver); //find the object marked "poolBall"
+                    Debug.Log("revolver added");
+                    change = true;
+                }
+
+            }
+        }
+        if (change)
+        {
+            //DestroyList();
+        }
+        UpdateList();
     }
 
+    public void UpdateList()
+    {
+        if (change)
+        {
+            Debug.Log(inventoryItems.Count);
 
-    Vector3 CirCircle(Vector3 center, float radius, float space)
+
+                //find amount of items in array
+                //get desired angle by 360/array length
+                if (inventoryItems.Count > 0)
+                {
+                    inventorySlice = 360 / inventoryItems.Count;
+                }
+                //transform with center of inventory circle
+                Vector3 center = transform.position;
+
+                float space = 1;
+
+
+          
+
+     
+            foreach(GameObject slot in inventoryItems)
+            {
+                
+
+
+                //start at 0.
+                //spawn item with offset
+                Vector3 pos = CirCircle(center, 3.0f, space);
+                //update variable for determining the angle of the next item
+                //update angle for next item
+                space += 1;
+                //random rotation doesn't matter.
+                Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - pos);
+                //save ref to item
+
+
+                    item = Instantiate(slot, pos, rot);
+                    item.transform.SetParent(manager.transform);
+                    item.AddComponent<RotationScript>();
+
+                
+                //currentInventory.Add(item);
+                //add item to list for ref.
+            }
+            change = false;
+        }
+        
+
+
+    }   
+        Vector3 CirCircle(Vector3 center, float radius, float space)
     {
         //declare the angle of the object
         float ang = (inventorySlice * space) + 180;
@@ -72,9 +210,5 @@ public class InventorySpawner : MonoBehaviour
         //find the rise coordinate based on radius and angle
         pos.z = center.z + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
         return pos;
-    }
-
-
-
-    
+    }  
 }

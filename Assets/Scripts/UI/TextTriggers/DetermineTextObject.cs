@@ -10,7 +10,7 @@ public class DetermineTextObject : MonoBehaviour
 
     public static bool displayText;
     public static float textWaitTimer = 0f;
-    public static bool go = false;
+    public static bool go;
     public static float maxDistance = 2.5f;
     public static Vector3 position0;
     public static Vector3 position1;
@@ -34,11 +34,13 @@ public class DetermineTextObject : MonoBehaviour
         //}
         if (go)
         {
+            //Debug.Log("Go initiated");
             textWaitTimer -= Time.deltaTime;
         }
         //check if textWaitTimer is not 0
         if (textWaitTimer <= 0)
         {
+            //Debug.Log("Wait timer is 0");
             textWaitTimer = 0;
             go = false;
         }

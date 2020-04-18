@@ -64,9 +64,10 @@ namespace UnityChan
 			orgColHight = col.height;
 			orgVectColCenter = col.center;
 		}
-	
-	
+
+
 		// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
+		[System.Obsolete]
 		void FixedUpdate ()
 		{
 			float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義

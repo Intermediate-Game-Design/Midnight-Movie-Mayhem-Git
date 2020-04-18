@@ -13,12 +13,14 @@ public class TankControls : MonoBehaviour
     public bool backwardsCheck = false;
     public bool inputEnabled = true;
     public bool canSprint = true;
-
+    
 
 
 
     void Update()
     {
+
+
         if (inputEnabled)
         {
             if (canSprint)

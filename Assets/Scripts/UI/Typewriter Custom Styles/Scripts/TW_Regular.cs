@@ -54,6 +54,8 @@ public class TW_Regular : MonoBehaviour {
 
     public GameObject Player;
     public GameObject InteractableParent;
+    public GameObject InventoryManager;
+    public static GameObject item_temp;
     public bool item;
     public bool action;
 
@@ -68,6 +70,14 @@ public class TW_Regular : MonoBehaviour {
     void Start () {
         ORIGINAL_TEXT = gameObject.GetComponent<TextMeshProUGUI>().text;
         gameObject.GetComponent<TextMeshProUGUI>().text = "";
+        if(Player == null)
+        {
+            Player = GameObject.Find("Player");
+        }
+        if(InteractableParent == null)
+        {
+            InteractableParent = GameObject.Find("Interactables");
+        }
         if (LaunchOnStart)
         {
             StartTypewriter();
@@ -100,12 +110,11 @@ public class TW_Regular : MonoBehaviour {
             //if it's not an item
             if (item == false && action == false && Input.GetKey(KeyCode.Space))
             {
+                //Debug.Log("Space pressed");
                 SkipTypewriter();
                 go = false;
-                if (callingObject.GetComponent<ChangeRooms>().unlocked == true)
-                {
-                    callingObject.GetComponent<ChangeRooms>().unlocked = false;
-                }
+                
+                
             }
 
             //if it's an item, choose what to do with it
@@ -117,6 +126,16 @@ public class TW_Regular : MonoBehaviour {
                     go = false;
                     //PlayPickupAnimation();
                     //AddToInventory();
+                    if (callingObject.name == "BilliardsTable")
+                    {
+                        GameState.IniWriteValue("Items", "Pool Ball", "true");
+                        InventoryState.IniWriteValue("Items", "slot1", "Pool Ball");
+
+                        //GameObject item = GameObject.Find("Wrench");
+                        //InventorySpawner.temp_item = "Wrench";
+                        
+
+                    }
                 }
                 if(action == true)
                 {
@@ -138,6 +157,10 @@ public class TW_Regular : MonoBehaviour {
   
     public void StartTypewriter()
     {
+        if (GameObject.FindWithTag("Killer") != null)
+        {
+            KillerBehavior.canMove = false;
+        }
         start = true;
         сharIndex = 0;
         time = 0f;
@@ -146,10 +169,12 @@ public class TW_Regular : MonoBehaviour {
 
     public void SkipTypewriter()
     {
+        //Debug.Log("Closing text");
         сharIndex = 0;
         DetermineTextObject.displayText = false;
         Player.GetComponent<TankControls>().inputEnabled = true;
-        gameObject.GetComponent<TextMeshProUGUI>().text = "";
+        this.gameObject.GetComponent<TextMeshProUGUI>().text = "";
+        Debug.Log(this.gameObject.GetComponent<TextMeshProUGUI>().text.ToString());
         display_text = false;
         start = false;
         DetermineTextObject.textWaitTimer = 1.5f;
@@ -159,11 +184,30 @@ public class TW_Regular : MonoBehaviour {
         {
             if (callingObject.GetComponent<ChangeRooms>() != null)
             {
-                if (callingObject.GetComponent<ChangeRooms>().unlocked == true) //disable the unlock variable, so that the door is permanently unlocked
+                if (callingObject.GetComponent<ChangeRooms>().unlocked == true)
                 {
                     callingObject.GetComponent<ChangeRooms>().unlocked = false;
+
+                    switch (callingObject.name)
+                    {
+                        case "SideDoorToOutside":
+                            GameState.IniWriteValue("Doors", "Side Door To Outside", "unlocked");
+                            GameState.IniWriteValue("Doors", "Side Door To Inside", "unlocked");
+                            break;
+                        case "OfficeToStorage":
+                            GameState.IniWriteValue("Doors", "Office To Storage Door", "unlocked");
+                            GameState.IniWriteValue("Doors", "Storage To Office Door", "unlocked");
+                            break;
+                        default:
+                            Debug.Log(callingObject.name);
+                            break;
+                    }
                 }
             }
+        }
+        if (GameObject.FindWithTag("Killer") != null)
+        {
+            KillerBehavior.canMove = true;
         }
     }
 

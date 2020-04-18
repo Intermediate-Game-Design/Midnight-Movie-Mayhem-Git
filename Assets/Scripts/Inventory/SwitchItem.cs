@@ -34,36 +34,39 @@ public class SwitchItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.U))
+        if (inventory.inventoryItems.Count > 1)
         {
 
-            //transform.eulerAngles = new Vector3(xRotation, transform.eulerAngles.y, transform.eulerAngles.z);
-            //this.transform.Rotate(0, RotationSpeed, 0);
-            //iTween.RotateTo(manager, "y", inventory.inventorySlice, 1.0f);
-            iTween.RotateAdd(manager, iTween.Hash("y", inventory.inventorySlice, "time", 1.0f));
-            inventoryIndex++;
-            if(inventoryIndex >= inventory.inventoryItems.Count)
+            if (Input.GetKey(KeyCode.A))
             {
-                inventoryIndex = 0;
+
+                //transform.eulerAngles = new Vector3(xRotation, transform.eulerAngles.y, transform.eulerAngles.z);
+                //this.transform.Rotate(0, RotationSpeed, 0);
+                //iTween.RotateTo(manager, "y", inventory.inventorySlice, 1.0f);
+                iTween.RotateAdd(manager, iTween.Hash("y", inventory.inventorySlice, "time", 1.0f));
+                inventoryIndex++;
+                if (inventoryIndex >= inventory.inventoryItems.Count)
+                {
+                    inventoryIndex = 0;
+                }
+                equipItem = inventory.inventoryItems[inventoryIndex];
+                Debug.Log(inventoryIndex);
+                Debug.Log(equipItem);
             }
-            equipItem = inventory.inventoryItems[inventoryIndex];
-            Debug.Log(inventoryIndex);
-            Debug.Log(equipItem);
-        }
-        if (Input.GetKey(KeyCode.O))
-        {
-            //transform.eulerAngles = new Vector3(xRotation1, transform.eulerAngles.y, transform.eulerAngles.z);
-            iTween.RotateAdd(manager, iTween.Hash("y", -1 * inventory.inventorySlice, "time", 1.0f));
-            inventoryIndex--;
-            if (inventoryIndex < 0)
+            if (Input.GetKey(KeyCode.D))
             {
-                inventoryIndex = inventory.inventoryItems.Count;
+                //transform.eulerAngles = new Vector3(xRotation1, transform.eulerAngles.y, transform.eulerAngles.z);
+                iTween.RotateAdd(manager, iTween.Hash("y", -1 * inventory.inventorySlice, "time", 1.0f));
+                inventoryIndex--;
+                if (inventoryIndex < 0)
+                {
+                    inventoryIndex = inventory.inventoryItems.Count;
+                }
+                equipItem = inventory.inventoryItems[inventoryIndex];
+                Debug.Log(inventoryIndex);
+                Debug.Log(equipItem);
             }
-            equipItem = inventory.inventoryItems[inventoryIndex];
-            Debug.Log(inventoryIndex);
-            Debug.Log(equipItem);
         }
-        
     }
 
 

@@ -54,6 +54,19 @@ public class ChangeRooms : MonoBehaviour
     //Change Scene By Name
     public void ChangeScene(string name)
     {
+        if (KillerBehavior.chasing)
+        {
+            GameState.IniWriteValue("Enemy", "Chasing", "true");
+        }
+        else if (KillerBehavior.chasing == false || GameObject.FindWithTag("Killer") == null)
+        {
+            GameState.IniWriteValue("Enemy", "Chasing", "false");
+        }
+        if(this.gameObject.name == "EmergencyDoor")
+        {
+            GameState.IniWriteValue("Doors", "EmergencyDoor", "unlocked");
+        }
+
         SceneManager.LoadScene(name);
         PlayerSpawner.x_point = temp_position_x;
         PlayerSpawner.y_point = temp_position_y;

@@ -7,6 +7,10 @@ TagManager:
   - Interactable
   - Bathroom
   - Camera
+  - Killer
+  - Wrench
+  - Pool Ball
+  - manager
   layers:
   - Default
   - TransparentFX
