@@ -28,7 +28,7 @@ public class SwitchItem : MonoBehaviour
         //find the current angle between inventory items.
         inventory = gameObject.GetComponent<InventorySpawner>();
         equipItem = inventory.inventoryItems[inventoryIndex];
-        Debug.Log(inventoryIndex);
+        //Debug.Log(inventoryIndex);
     }
 
     // Update is called once per frame
