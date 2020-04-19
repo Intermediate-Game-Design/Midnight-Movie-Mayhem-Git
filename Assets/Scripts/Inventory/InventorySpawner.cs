@@ -37,11 +37,15 @@ public class InventorySpawner : MonoBehaviour
     }
     private void Update()
     {
+        //why is this here and not on a script on the ball itself?
         GameObject.FindWithTag("Pool Ball").transform.rotation = Quaternion.Euler(180, 0, 0);
     }
     public void CheckSave()
     {
         //int size = inventoryItems.Count;
+
+        //this gets the state of all the possible items in the inventory.
+        //false is not in inventory.
 
         InventoryState.IniReadValue("Items", "slot1");
         InventoryState.IniReadValue("Items", "slot2");
@@ -51,12 +55,15 @@ public class InventorySpawner : MonoBehaviour
         InventoryState.IniReadValue("Items", "slot6");
         InventoryState.IniReadValue("Items", "slot7");
         InventoryState.IniReadValue("Items", "slot8");
+
+        //current state of possible pickup items.
     
         string sw = GameState.IniReadValue("Items", "Saw");    
         string pool_ball = GameState.IniReadValue("Items", "Pool Ball");
         string handle = GameState.IniReadValue("Items", "Crank Handle");
         string gun = GameState.IniReadValue("Items", "Revolver");
 
+        //checks if pool ball has been picked up. If so, nothing. if not, add it to the inventory items.
         if (pool_ball == "true")
         {
             if (inventoryItems.Count == 0)
@@ -77,11 +84,14 @@ public class InventorySpawner : MonoBehaviour
                     else if (i == inventoryItems.Count-1 && inventoryItems[i].name != "Pool Ball")
                     {
                         inventoryItems.Add(poolBall); //find the object marked "poolBall"  
+                        //if the item was just added.
                         change = true;
                     }
                 }
             }
         }
+
+        //checks if saw has been picked up. If so, nothing. if not, add it to the inventory items.
         if (sw == "true")
         {
                 //Debug.Log("pool ball is true");
@@ -96,11 +106,14 @@ public class InventorySpawner : MonoBehaviour
                     {
                         inventoryItems.Add(saw); //find the object marked "poolBall"
                         Debug.Log("saw added");
-                        change = true;
+                    //if the item was just added.
+                    change = true;
                     }
 
                 }
         }
+
+        //checks if handle has been picked up. If so, nothing. if not, add it to the inventory items.
         if (handle == "true")
         {
             //Debug.Log("pool ball is true");
@@ -115,11 +128,13 @@ public class InventorySpawner : MonoBehaviour
                 {
                     inventoryItems.Add(crankHandle); //find the object marked "poolBall"
                     Debug.Log("handle added");
+                    //if the item was just added.
                     change = true;
                 }
 
             }
         }
+        //checks if gun has been picked up. If so, nothing. if not, add it to the inventory items.
         if (gun == "true")
         {
             //Debug.Log("pool ball is true");
@@ -134,15 +149,18 @@ public class InventorySpawner : MonoBehaviour
                 {
                     inventoryItems.Add(revolver); //find the object marked "poolBall"
                     Debug.Log("revolver added");
+                    //if the item was just added.
                     change = true;
                 }
 
             }
         }
+        //if a new item was added, destroy all current children items in the inventory manager .
         if (change)
         {
-            //DestroyList();
+            DestroyList();
         }
+        //run spawning function
         UpdateList();
     }
 
@@ -198,6 +216,15 @@ public class InventorySpawner : MonoBehaviour
 
 
     }   
+
+    public void DestroyList()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
         Vector3 CirCircle(Vector3 center, float radius, float space)
     {
         //declare the angle of the object
