@@ -57,6 +57,7 @@ public class iTween : MonoBehaviour
 	public float time, delay;
 	public LoopType loopType;
 	public bool isRunning,isPaused;
+
 	/* GFX47 MOD START */
 	public string _name;
 	/* GFX47 MOD END */
@@ -4454,6 +4455,8 @@ public class iTween : MonoBehaviour
 			
 	void TweenComplete(){
 		isRunning=false;
+		Debug.Log("tween complete");
+		
 		
 		//dial in percentage to 1 or 0 for final run:
 		if(percentage>.5f){

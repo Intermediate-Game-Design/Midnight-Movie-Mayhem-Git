@@ -219,6 +219,7 @@ public class InventorySpawner : MonoBehaviour
 
     public void DestroyList()
     {
+        //Debug.Log("destroy list called");
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SwitchItem : MonoBehaviour
 {
-
     //private float speed = 5;
     // private float width = 4;
     //private float height = 7;
-    
+
+    public float timer = 0f;    
+
+
     //need a ref to the inventory manager
     public GameObject manager;
 
@@ -20,51 +22,89 @@ public class SwitchItem : MonoBehaviour
 
     //bool canSwitchL = true;
     //bool canSwitchR = true;
-    private int inventoryIndex = 0;
+    public int inventoryIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         //find the current angle between inventory items.
         inventory = gameObject.GetComponent<InventorySpawner>();
-        equipItem = inventory.inventoryItems[inventoryIndex];
+        if (inventory.inventoryItems.Count <= 1)
+        {
+            equipItem = inventory.inventoryItems[0];
+            inventoryIndex = 0;
+        }
+        else
+        {
+            inventoryIndex = inventory.inventoryItems.Count - 1;
+            equipItem = inventory.inventoryItems[inventoryIndex];
+        }
         //Debug.Log(inventoryIndex);
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        //decrease timer to 0 if it isn't already
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            timer = 0;
+        }
+
         if (inventory.inventoryItems.Count > 1)
         {
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.D) && timer == 0f)
             {
 
                 //transform.eulerAngles = new Vector3(xRotation, transform.eulerAngles.y, transform.eulerAngles.z);
                 //this.transform.Rotate(0, RotationSpeed, 0);
                 //iTween.RotateTo(manager, "y", inventory.inventorySlice, 1.0f);
                 iTween.RotateAdd(manager, iTween.Hash("y", inventory.inventorySlice, "time", 1.0f));
-                inventoryIndex++;
-                if (inventoryIndex >= inventory.inventoryItems.Count)
-                {
-                    inventoryIndex = 0;
-                }
-                equipItem = inventory.inventoryItems[inventoryIndex];
-                Debug.Log(inventoryIndex);
-                Debug.Log(equipItem);
+                timer = 1f;
+
+              
+                    if (inventoryIndex == inventory.inventoryItems.Count - 1)
+                    {
+                        inventoryIndex = 0;
+                        equipItem = inventory.inventoryItems[inventoryIndex];
+                        return;
+                    }
+                    else
+                    {
+                        inventoryIndex++;
+                        equipItem = inventory.inventoryItems[inventoryIndex];
+                        return;
+                    }
+                
+
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.A) && timer == 0f)
             {
                 //transform.eulerAngles = new Vector3(xRotation1, transform.eulerAngles.y, transform.eulerAngles.z);
                 iTween.RotateAdd(manager, iTween.Hash("y", -1 * inventory.inventorySlice, "time", 1.0f));
-                inventoryIndex--;
-                if (inventoryIndex < 0)
-                {
-                    inventoryIndex = inventory.inventoryItems.Count;
-                }
-                equipItem = inventory.inventoryItems[inventoryIndex];
-                Debug.Log(inventoryIndex);
-                Debug.Log(equipItem);
+                timer = 1f;
+
+      
+                    if (inventoryIndex == 0)
+                    {
+                        inventoryIndex = inventory.inventoryItems.Count - 1;
+                        equipItem = inventory.inventoryItems[inventoryIndex];
+                        return;
+                    }
+                    else
+                    {
+                        inventoryIndex--;
+                    }
+
+                    equipItem = inventory.inventoryItems[inventoryIndex];
+        
+
             }
         }
     }

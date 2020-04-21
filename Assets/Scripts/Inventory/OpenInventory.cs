@@ -44,7 +44,7 @@ public class OpenInventory : MonoBehaviour
                     this.gameObject.GetComponent<TankControls>().inputEnabled = false;
                     KillerBehavior.canMove = false;
                     GameObject.Find("InventoryManager").GetComponent<InventorySpawner>().CheckSave();
-
+                    //manager.SendMessage("UpdateInventory");
                 }
 
                 else
