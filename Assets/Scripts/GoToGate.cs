@@ -14,7 +14,14 @@ public class GoToGate : MonoBehaviour
         {
             if (level == "Outdoors_Main")
             {
-
+                if (KillerBehavior.chasing)
+                {
+                    GameState.IniWriteValue("Enemy", "Chasing", "true");
+                }
+                else if (KillerBehavior.chasing == false || GameObject.FindWithTag("Killer") == null)
+                {
+                    GameState.IniWriteValue("Enemy", "Chasing", "false");
+                }
                 SceneManager.LoadScene("Exit_Gate");
 
                 PlayerSpawner.x_point = 0;
@@ -27,6 +34,14 @@ public class GoToGate : MonoBehaviour
             }
             if (level == "Exit_Gate")
             {
+                if (KillerBehavior.chasing)
+                {
+                    GameState.IniWriteValue("Enemy", "Chasing", "true");
+                }
+                else if (KillerBehavior.chasing == false || GameObject.FindWithTag("Killer") == null)
+                {
+                    GameState.IniWriteValue("Enemy", "Chasing", "false");
+                }
                 SceneManager.LoadScene("Outdoors_Main");
 
                 float temp_position_x = -41.97404f;

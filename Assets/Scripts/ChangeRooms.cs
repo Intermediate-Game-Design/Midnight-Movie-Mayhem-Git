@@ -30,21 +30,38 @@ public class ChangeRooms : MonoBehaviour
         IsFacingObject();
 
         
-        if (ready && (Input.GetKey(KeyCode.Space)) && !locked && !unlocked && !action)
+        if (ready && (Input.GetKey(KeyCode.Space)))
         {
-
-            Component obj = this.gameObject.GetComponent<ChangeRooms>();
-
-            if (obj == null) 
+            if (!locked && !unlocked && !action)
             {
-                ChangeScene(level);
-            }
-            else
-            {
-                if(DetermineTextObject.textWaitTimer == 0)
+                Component obj = this.gameObject.GetComponent<ChangeRooms>();
+
+                if (obj == null)
                 {
                     ChangeScene(level);
                 }
+                else
+                {
+                    if (DetermineTextObject.textWaitTimer == 0)
+                    {
+                        ChangeScene(level);
+                    }
+                }
+            }
+            else
+            {
+                if (locked)
+                {
+                    string cb = GameState.IniReadValue("Items", "Crowbar");
+                    if (cb == "true" && required_key == "Crowbar")
+                    {
+                        locked = false;
+                        unlocked = true;
+                        this.gameObject.GetComponent<DetermineTextObject>().TextObject = GameObject.Find("Text_ShedUnlocked");
+                    }
+                }
+
+
             }
 
         }

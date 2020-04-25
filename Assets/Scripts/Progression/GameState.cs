@@ -54,9 +54,12 @@ public class GameState : MonoBehaviour
         string office_to_storage_door = IniReadValue("Doors", "Office To Storage Door");
         string storage_to_office_door = IniReadValue("Doors", "Storage To Office Door");
         string emergency_door = IniReadValue("Doors", "EmergencyDoor");
-        string shed_door = IniReadValue("Doors", "ShedDoor");
+        string shed_door = IniReadValue("Doors", "Shed");
 
         string pool_ball = IniReadValue("Items", "Pool Ball");
+        string saw = IniReadValue("Items", "Saw");
+        string cb = IniReadValue("Items", "Crowbar");
+        string car = IniReadValue("Car", "car_state");
 
         if(side_door_to_outside == "unlocked" && GameObject.Find("SideDoorToOutside") != null)
         {
@@ -85,6 +88,7 @@ public class GameState : MonoBehaviour
         if(shed_door == "unlocked" && GameObject.Find("ShedDoor") != null)
         {
             GameObject.Find("ShedDoor").GetComponent<ChangeRooms>().locked = false;
+            GameObject.Find("ShedDoor").GetComponent<ChangeRooms>().unlocked = false;
         }
 
 
@@ -99,18 +103,60 @@ public class GameState : MonoBehaviour
                 Destroy(GameObject.Find("Text_PoolTable"));
                 GameObject.Find("BlueBall").transform.position = new Vector3(0, 1000, 0);
             }
+            if (GameObject.Find("specialcar") != null)
+            {
+                GameObject.Find("specialcar").GetComponent<DetermineTextObject>().TextObject = GameObject.Find("Text_CarUnlocked");
+            }
+           
+
         }
+        if(saw == "true")
+        {
+            if (GameObject.Find("Saw") != null)
+            {
+                Destroy(GameObject.Find("Text_Saw"));
+                Destroy(GameObject.Find("Saw"));
+            }
+
+        }
+        if(cb == "true")
+        {
+            if (GameObject.Find("ShedDoor") != null)
+            {
+                GameObject obj = GameObject.Find("ShedDoor");
+                obj.GetComponent<DetermineTextObject>().TextObject = GameObject.Find("Text_ShedUnlocked");
+
+                if (shed_door == "unlocked")
+                {
+                    obj.GetComponent<ChangeRooms>().locked = false;
+                    obj.GetComponent<ChangeRooms>().unlocked = false;
+                }
+                else
+                {
+                    obj.GetComponent<ChangeRooms>().locked = false;
+                    obj.GetComponent<ChangeRooms>().unlocked = true;
+                }
+            }
+            if (GameObject.Find("specialcar"))
+            {
+                Destroy(GameObject.Find("Text_CarUnlocked"));
+                Destroy(GameObject.Find("Text_CarLocked"));
+            }
+            
+
+        }
+
         
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            IniWriteValue("Items", "Crank Handle","true");
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            IniWriteValue("Items", "Revolver","true");
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.T))
+    //    {
+    //        IniWriteValue("Items", "Crank Handle","true");
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Y))
+    //    {
+    //        IniWriteValue("Items", "Revolver","true");
+    //    }
+    //}
 }

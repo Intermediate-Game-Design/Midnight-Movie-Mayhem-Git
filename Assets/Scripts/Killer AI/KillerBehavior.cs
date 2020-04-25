@@ -7,6 +7,9 @@ public class KillerBehavior : MonoBehaviour
 {
     public GameObject Player;
     private NavMeshAgent navMesh;
+    public GameObject patrolPointMaster;
+    public GameObject[] points;
+    public int current_point = 0;
 
     //perception
     public float maxAngle = 60.5f;
@@ -17,7 +20,7 @@ public class KillerBehavior : MonoBehaviour
 
     //behavior
     private Vector3 startPosition;
-    private Vector3 personalLastSighting;
+    public Vector3 personalLastSighting;
     public static bool canMove = true; //toggle if inventory is open, or other things
     private bool foundPoint;
     public bool patrolling = true;
@@ -49,7 +52,8 @@ public class KillerBehavior : MonoBehaviour
         {
             Gizmos.color = Color.green;
         }
-        Vector3 up = new Vector3(0,0, 0);
+        Vector3 up = new Vector3(transform.position.x, transform.position.y+2, transform.position.z);
+        Gizmos.DrawRay(up, (Player.transform.position + (Player.transform.up*4) - transform.position).normalized *maxRadius);
         Gizmos.DrawRay(transform.position, (Player.transform.position + (Player.transform.up*4) - transform.position).normalized *maxRadius);
 
 
@@ -71,10 +75,13 @@ public class KillerBehavior : MonoBehaviour
         {
 
             //Debug.Log("Within angle");
+
+            Vector3 up = new Vector3(checkingObject.transform.position.x, checkingObject.transform.position.y + 2, checkingObject.transform.position.z);
             Ray ray = new Ray(checkingObject.transform.position, target.transform.position + (target.transform.up*4) - checkingObject.transform.position);
+            Ray ray2 = new Ray(up, target.transform.position + (target.transform.up*4) - checkingObject.transform.position);
             RaycastHit hit;
 
-            if(Physics.Raycast(ray,out hit, maxRadius))
+            if(Physics.Raycast(ray,out hit, maxRadius) || Physics.Raycast(ray2,out hit,maxRadius))
             {
                 if (hit.transform.CompareTag("Player"))
                  {
@@ -82,6 +89,8 @@ public class KillerBehavior : MonoBehaviour
                  //Debug.Log("Player Hit");
                  return true;
                  }
+                
+
             }
         }
         else
@@ -118,6 +127,10 @@ public class KillerBehavior : MonoBehaviour
 
             //Killer should start patrolling immediately
             startPosition = this.transform.position; //sets start position before new nav path is created
+            patrolPointMaster = GameObject.Find("PatrolPointMaster");
+            points = patrolPointMaster.GetComponent<AIPatrol>().patrolPoints;
+
+
             Patrol();
         
         maxRadius = 60.5f;
@@ -128,8 +141,15 @@ public class KillerBehavior : MonoBehaviour
         //Debug.Log("Wandering");
 
         //pick a random point to proceed to
-        Vector3 destination = startPosition + new Vector3(Random.Range(-patrolRange, patrolRange), 0, Random.Range(-patrolRange, patrolRange));
+        //Vector3 destination = startPosition + new Vector3(Random.Range(-patrolRange, patrolRange), 0, Random.Range(-patrolRange, patrolRange));
 
+        //pick a point from the patrol points array
+
+        
+
+       
+
+        Vector3 destination = points[current_point].transform.position;
         NewDestination(destination);
     }
 
@@ -144,24 +164,30 @@ public class KillerBehavior : MonoBehaviour
             navMesh.SetDestination(targetPoint); //make the enemy move toward that point
             foundPoint = true; //used in coroutine to only run the function once
         }
-        else
-        {
-            Patrol(); //try for a new point that works
-        }
-
+        //else
+        //{
+        //    Patrol(); //try for a new point that works
+        //}
+        //if (current_point != points.Length-1)
+        //{ 
+        //}
     }
 
     private IEnumerator DelayPatrol()
     {
         yield return new WaitForSeconds(3f); //wait 3 seconds before setting a new point to move to
 
-        if (investigating)
-        {
-            investigating = false;
-            patrolling = true;
-        }
         if (!foundPoint) //has a point already been decided?
         {
+            if (investigating)
+            {
+                investigating = false;
+                patrolling = true;
+            }
+            else
+            {
+                current_point++;
+            }
             Patrol();
         }
     }
@@ -197,8 +223,15 @@ public class KillerBehavior : MonoBehaviour
             {
                 if (navMesh.hasPath || navMesh.velocity.sqrMagnitude == 0f)
                 {
-                    StartCoroutine(DelayPatrol()); //wait a few seconds before finding a new destination
-                    foundPoint = false; //reset bool
+                    if (current_point != points.Length-1)
+                    {
+                        StartCoroutine(DelayPatrol()); //wait a few seconds before finding a new destination
+                        foundPoint = false; //reset bool
+                    }
+                    else if (Vector3.Distance(transform.position,points[points.Length-1].transform.position) <= 5)
+                    {
+                        Destroy(this.gameObject);
+                    }
                 }
             }
         }

@@ -113,8 +113,30 @@ public class TW_Regular : MonoBehaviour {
                 //Debug.Log("Space pressed");
                 SkipTypewriter();
                 go = false;
-                
-                
+
+
+                Debug.Log(callingObject);
+                if (callingObject.name == "specialcar")
+                {
+                    GameState.IniWriteValue("Items", "Crowbar", "true");
+                    Destroy(GameObject.Find("Text_CarLocked"));
+                    Destroy(GameObject.Find("Text_CarUnlocked"));
+                    GameObject killer = GameObject.Find("KillerSpawner(Clone)").GetComponent<SpawnKiller>().killer;
+                    GameObject[] points = GameObject.Find("EnemySpawnPoints").GetComponent<AIPatrol>().spawnPoints;
+                    GameObject spawnPoint = points[1];
+
+                    if (GameObject.FindWithTag("Killer") == null)
+                    {
+                        Instantiate(killer, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                        KillerBehavior.chasing = true;
+                        //ai.GetComponent<KillerBehavior>().personalLastSighting = GameObject.Find("Player").transform.position;
+
+                    }
+                    else
+                    {
+                        KillerBehavior.chasing = true;
+                    }
+                }
             }
 
             //if it's an item, choose what to do with it
@@ -136,6 +158,15 @@ public class TW_Regular : MonoBehaviour {
                         
 
                     }
+                    if (callingObject.name == "SawTrigger")
+                    {
+                        GameState.IniWriteValue("Items", "Saw", "true");
+                        Destroy(GameObject.Find("Saw"));
+                        //InventoryState.IniWriteValue("Items","slot")
+                    }
+                    
+
+
                 }
                 if(action == true)
                 {
@@ -197,6 +228,9 @@ public class TW_Regular : MonoBehaviour {
                         case "OfficeToStorage":
                             GameState.IniWriteValue("Doors", "Office To Storage Door", "unlocked");
                             GameState.IniWriteValue("Doors", "Storage To Office Door", "unlocked");
+                            break;
+                        case "ShedDoor":
+                            GameState.IniWriteValue("Doors", "Shed", "unlocked");
                             break;
                         default:
                             Debug.Log(callingObject.name);

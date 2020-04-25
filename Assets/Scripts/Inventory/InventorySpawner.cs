@@ -62,6 +62,8 @@ public class InventorySpawner : MonoBehaviour
         string pool_ball = GameState.IniReadValue("Items", "Pool Ball");
         string handle = GameState.IniReadValue("Items", "Crank Handle");
         string gun = GameState.IniReadValue("Items", "Revolver");
+        string cb = GameState.IniReadValue("Items", "Crowbar");
+        string ek = GameState.IniReadValue("Items", "Exit Gate Key");
 
         //checks if pool ball has been picked up. If so, nothing. if not, add it to the inventory items.
         if (pool_ball == "true")
@@ -155,6 +157,50 @@ public class InventorySpawner : MonoBehaviour
 
             }
         }
+        //checks if gun has been picked up. If so, nothing. if not, add it to the inventory items.
+        if (cb == "true")
+        {
+            //Debug.Log("pool ball is true");
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].name == "Crowbar")
+                {
+                    Debug.Log("Crowbar already exists");
+                    break;
+                }
+                else if (i == inventoryItems.Count - 1 && inventoryItems[i].name != "Crowbar")
+                {
+                    inventoryItems.Add(crowbar); //find the object marked "poolBall"
+                    Debug.Log("Crowbar added");
+                    //if the item was just added.
+                    change = true;
+                }
+
+            }
+        }
+        //checks if gun has been picked up. If so, nothing. if not, add it to the inventory items.
+        if (ek == "true")
+        {
+            //Debug.Log("pool ball is true");
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].name == "Exit Gate Key")
+                {
+                    Debug.Log("Exit key already exists");
+                    break;
+                }
+                else if (i == inventoryItems.Count - 1 && inventoryItems[i].name != "Exit Gate Key")
+                {
+                    inventoryItems.Add(ExitGateKey); //find the object marked "poolBall"
+                    Debug.Log("Exit key added");
+                    //if the item was just added.
+                    change = true;
+                }
+
+            }
+        }
+
+
         //if a new item was added, destroy all current children items in the inventory manager .
         if (change)
         {

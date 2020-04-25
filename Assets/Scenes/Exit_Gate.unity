@@ -4262,6 +4262,7 @@ MonoBehaviour:
   callingObject: {fileID: 0}
   Player: {fileID: 1176417630}
   InteractableParent: {fileID: 1889314818}
+  InventoryManager: {fileID: 0}
   item: 0
   action: 0
 --- !u!222 &592360054
@@ -7248,7 +7249,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.02
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7582,6 +7583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraGame: {fileID: 2032259312}
   cameraInventory: {fileID: 175542991}
+  manager: {fileID: 0}
 --- !u!4 &1176417636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400096, guid: de63ee434fe39914b8d2f5680c62d05f,
@@ -10092,6 +10094,7 @@ MonoBehaviour:
   callingObject: {fileID: 0}
   Player: {fileID: 1176417630}
   InteractableParent: {fileID: 1889314818}
+  InventoryManager: {fileID: 0}
   item: 0
   action: 0
 --- !u!222 &1544148043
@@ -12355,6 +12358,7 @@ MonoBehaviour:
   callingObject: {fileID: 0}
   Player: {fileID: 1176417630}
   InteractableParent: {fileID: 1889314818}
+  InventoryManager: {fileID: 0}
   item: 0
   action: 0
 --- !u!222 &1863884336
@@ -12938,8 +12942,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f38ef56ecb5564e8b5237fac977d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   manager: {fileID: 1980195882}
   equipItem: {fileID: 0}
+  inventoryIndex: 0
 --- !u!114 &1980195885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12957,6 +12963,16 @@ MonoBehaviour:
   - {fileID: 5910233811120474901, guid: 98057d5091a504c4eb60c38694005b55, type: 3}
   inventorySlice: 90
   manager: {fileID: 1980195882}
+  crankHandle: {fileID: 0}
+  poolBall: {fileID: 0}
+  crowbar: {fileID: 0}
+  saw: {fileID: 0}
+  revolver: {fileID: 0}
+  VHS: {fileID: 0}
+  ticketBoothKey: {fileID: 0}
+  ExitGateKey: {fileID: 0}
+  temp_size: 0
+  change: 0
 --- !u!4 &1982507241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1f6bf103fd3778449879b99c9ae3533e,
