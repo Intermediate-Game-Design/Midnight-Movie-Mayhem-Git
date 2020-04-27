@@ -68,9 +68,11 @@ public class InventorySpawner : MonoBehaviour
         //checks if pool ball has been picked up. If so, nothing. if not, add it to the inventory items.
         if (pool_ball == "true")
         {
-            if (inventoryItems.Count == 0)
+            if (inventoryItems.Count == 1) //Count should == 1. I changed it from == 0 because a list cannot have a count of 0 and have its Count attribute checked. it needs to have at least one empty item.
             {
+                //this function is not firing.
                 inventoryItems.Add(poolBall);
+                Debug.Log("i got a pool ball");
             }
             else
             {

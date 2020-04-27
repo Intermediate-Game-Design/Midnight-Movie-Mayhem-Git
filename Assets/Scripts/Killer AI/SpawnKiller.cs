@@ -51,7 +51,9 @@ public class SpawnKiller : MonoBehaviour
             }
             else
             {
-                FindPoint();
+                //This function originally called FindPiont() which caused a recursive loop.
+                spawnPoint = player.transform.position;
+                spawnRot = player.transform.rotation;
             }
         }
         else
